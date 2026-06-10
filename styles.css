@@ -146,18 +146,21 @@ body * {
   z-index: 0;
 }
 [data-mode="country"] .mode .mode-pill { background: var(--ochre); }
-.mode button svg {
-  width: 13px; height: 13px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.3rem;
-}
 
-/* Hide mode toggle text on small screens */
-@media (max-width: 540px) {
-  .mode button .mode-label { display: none; }
-  .mode button { padding: 0.4rem 0.5rem; }
-  .mode button svg { margin-right: 0; }
+/* Compact mobile variant — text only, smaller min-width, lighter padding */
+@media (max-width: 760px) {
+  .mode {
+    min-width: 0;
+    padding: 0.2rem;
+  }
+  .mode button {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+  }
+  .mode .mode-pill {
+    top: 3px; bottom: 3px;
+  }
 }
 img, picture, svg, video { display: block; max-width: 100%; height: auto; }
 img { object-fit: cover; }
