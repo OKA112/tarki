@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#14110F" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="description" data-ru="ТАРКИ — дачная мебель ручной работы из Дагестана. Премиальные коллекции для террасы, сада и беседки." data-en="TARKI — handcrafted garden furniture from Dagestan. Premium collections for terraces, gardens and pavilions." content="ТАРКИ — дачная мебель ручной работы из Дагестана." />
+  <title data-ru="ТАРКИ — Дачная мебель ручной работы. Дагестан" data-en="TARKI — Handcrafted garden furniture. Dagestan">ТАРКИ — Дачная мебель ручной работы. Дагестан</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500;600&family=Yeseva+One&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="welcome.css" />
+</head>
+<body>
+  <!-- film grain overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- custom cursor (desktop only via CSS) -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <header class="nav" id="nav">
+    <a href="#" class="brand" aria-label="TARKI">
+      <span class="dot"></span>
+      <span>TARKI</span>
+    </a>
+
+    <nav class="nav-menu" aria-label="Main">
+      <a href="catalog.html" data-ru="Каталог" data-en="Catalog">Каталог</a>
+      <a href="#manifesto" data-ru="О бренде" data-en="Studio">О бренде</a>
+      <a href="#materials" data-ru="Материалы" data-en="Materials">Материалы</a>
+      <a href="#process" data-ru="Процесс" data-en="Process">Процесс</a>
+      <a href="#showrooms" data-ru="Шоурумы" data-en="Showrooms">Шоурумы</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="mode" role="group" aria-label="Стиль сайта">
+        <span class="mode-pill" id="modePill"></span>
+        <button data-mode-btn="city" class="active" aria-pressed="true" title="Для дома · дизайнерская мебель">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V8h6v13M14 21v-8h6v8"/></svg>
+          <span class="mode-label" data-ru="Для дома" data-en="For home">Для дома</span>
+        </button>
+        <button data-mode-btn="country" aria-pressed="false" title="Для дачи · загородный отдых">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M4 21l5-9 4 6 3-4 5 7"/></svg>
+          <span class="mode-label" data-ru="Для дачи" data-en="For dacha">Для дачи</span>
+        </button>
+      </div>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang-btn="ru" class="active" aria-pressed="true">RU</button>
+        <span class="sep">/</span>
+        <button data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn-wa" href="https://wa.me/79280000000" data-magnetic target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+        </svg>
+        <span data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+      </a>
+      <button class="menu-toggle" aria-label="Меню" aria-expanded="false" id="menuToggle">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- mobile fullscreen panel -->
+  <nav class="mobile-panel" aria-label="Mobile" id="mobilePanel">
+    <a href="catalog.html"><span data-ru="01" data-en="01">01</span><span data-ru="Каталог" data-en="Catalog">Каталог</span></a>
+    <a href="#manifesto"><span data-ru="02" data-en="02">02</span><span data-ru="О бренде" data-en="Studio">О бренде</span></a>
+    <a href="#materials"><span data-ru="03" data-en="03">03</span><span data-ru="Материалы" data-en="Materials">Материалы</span></a>
+    <a href="#process"><span data-ru="04" data-en="04">04</span><span data-ru="Процесс" data-en="Process">Процесс</span></a>
+    <a href="#showrooms"><span data-ru="05" data-en="05">05</span><span data-ru="Шоурумы" data-en="Showrooms">Шоурумы</span></a>
+    <a href="#contact"><span data-ru="06" data-en="06">06</span><span data-ru="Контакты" data-en="Contact">Контакты</span></a>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-media">
+          <img
+            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=2400&q=80"
+            alt=""
+            fetchpriority="high"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      <div class="hero-top">
+        <div class="small">
+          <span data-ru="EST. MMXIX — МАХАЧКАЛА" data-en="EST. MMXIX — MAKHACHKALA">EST. MMXIX — МАХАЧКАЛА</span>
+          <span data-ru="Ручная работа. Натуральные материалы." data-en="Handcrafted. Natural materials.">Ручная работа. Натуральные материалы.</span>
+        </div>
+        <div class="small" style="text-align: right;">
+          <span data-ru="Коллекция 2026" data-en="Collection 2026">Коллекция 2026</span>
+          <span data-ru="48 моделей" data-en="48 pieces">48 моделей</span>
+        </div>
+      </div>
+
+      <h1 class="hero-headline" aria-label="Дача как искусство">
+        <span class="line"><span data-ru="Дача" data-en="A garden" data-ru-c="Аул" data-en-c="A village">Дача</span></span>
+        <span class="line"><span data-ru="как" data-en="as" data-ru-c="как" data-en-c="as">как</span></span>
+        <span class="line"><span data-ru="<em>искусство</em>" data-en="<em>art</em>" data-ru-c="<em>память</em>" data-en-c="<em>memory</em>"><em>искусство</em></span></span>
+      </h1>
+
+      <div class="hero-bottom">
+        <p class="hero-tag"
+           data-ru="Мебель для террас, садов и беседок, сделанная руками дагестанских мастеров из массива дуба, ясеня и липы."
+           data-en="Furniture for terraces, gardens and pavilions, crafted by Dagestani artisans from solid oak, ash and linden."
+           data-ru-c="Простая дачная мебель — для гостей у самовара, для долгих ужинов под виноградной лозой, для чая после жаркого дня."
+           data-en-c="Honest country furniture — for guests around the samovar, for long suppers under the grapevine, for tea after a hot day.">
+          Мебель для террас, садов и беседок, сделанная руками дагестанских мастеров из массива дуба, ясеня и липы.
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="hero-cta" href="catalog.html" data-magnetic>
+            <span data-ru="Смотреть коллекцию" data-en="Browse collection">Смотреть коллекцию</span>
+            <span class="arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span data-ru="Прокрутить" data-en="Scroll">Прокрутить</span>
+        <span class="bar"></span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MARQUEE
+         ============================================================ -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <!-- duplicated in JS for seamless loop -->
+        <div class="marquee-set">
+          <span class="marquee-item">Массив дуба <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.5 7.5H22l-6 4.5 2.5 7.5L12 16l-6.5 4.5L8 13.5 2 9h7.5z"/></svg></span>
+          <span class="marquee-item">Мебель на заказ <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.5 7.5H22l-6 4.5 2.5 7.5L12 16l-6.5 4.5L8 13.5 2 9h7.5z"/></svg></span>
+          <span class="marquee-item">Срок 4–8 недель <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.5 7.5H22l-6 4.5 2.5 7.5L12 16l-6.5 4.5L8 13.5 2 9h7.5z"/></svg></span>
+          <span class="marquee-item">Доставка по России <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.5 7.5H22l-6 4.5 2.5 7.5L12 16l-6.5 4.5L8 13.5 2 9h7.5z"/></svg></span>
+          <span class="marquee-item">Гарантия 7 лет <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.5 7.5H22l-6 4.5 2.5 7.5L12 16l-6.5 4.5L8 13.5 2 9h7.5z"/></svg></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MANIFESTO
+         ============================================================ -->
+    <section class="manifesto" id="manifesto">
+      <div class="container">
+        <div class="manifesto-head">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="О бренде" data-en="About">О бренде</p>
+          </div>
+          <div>
+            <p class="manifesto-text serif" data-reveal>
+              <span
+                data-ru="Мы делаем мебель, которая стареет красиво — как камень <em>Дербентской крепости</em> и пшеница на склонах <em>Гуниба</em>."
+                data-en="We make furniture that ages beautifully — like the stones of <em>Derbent citadel</em> and wheat on the slopes of <em>Gunib</em>."
+                data-ru-c="Дед делал стол. Отец — лавки. Теперь делаем мы — то, что простоит <em>сто лет</em> и пахнет <em>солнцем</em>."
+                data-en-c="Grandfather made the table. Father made the benches. Now we make — what will stand <em>a hundred years</em> and smell of <em>sun</em>."
+              >Мы делаем мебель, которая стареет красиво — как камень <em>Дербентской крепости</em> и пшеница на склонах <em>Гуниба</em>.</span>
+            </p>
+            <div class="manifesto-side" style="margin-top: 2.5rem; max-width: 42ch;">
+              <p data-reveal data-ru="ТАРКИ — это маленькая мастерская в Махачкале, где каждое кресло, лежак и обеденный стол собирают вручную. Без шаблонов. Без массового производства. Под ваш двор, террасу или беседку." data-en="TARKI is a small workshop in Makhachkala where every chair, lounger and dining table is assembled by hand. No templates. No mass production. Built for your yard, terrace or pavilion.">
+                ТАРКИ — это маленькая мастерская в Махачкале, где каждое кресло, лежак и обеденный стол собирают вручную. Без шаблонов. Без массового производства. Под ваш двор, террасу или беседку.
+              </p>
+              <p data-reveal data-ru="Каждая партия проходит сушку в течение 90 дней, шлифовку в 6 этапов и финишное масло из ядра грецкого ореха." data-en="Every batch is air-dried for 90 days, sanded through 6 stages and finished with walnut-kernel oil.">
+                Каждая партия проходит сушку в течение 90 дней, шлифовку в 6 этапов и финишное масло из ядра грецкого ореха.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="manifesto-grid">
+          <div class="m-img" data-reveal="mask">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="Workshop wood" loading="lazy" />
+          </div>
+          <div class="m-img" data-reveal="mask" style="--reveal-delay: 0.15s">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="Outdoor lounge" loading="lazy" />
+          </div>
+          <div class="m-img" data-reveal="mask" style="--reveal-delay: 0.3s">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COLLECTION
+         ============================================================ -->
+    <section class="collection" id="collection">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="Коллекция 2026" data-en="Collection 2026">Коллекция 2026</p>
+            <h2 class="serif" style="margin-top: 1.2rem;" data-ru="Избранные <em>работы</em>" data-en="Featured <em>pieces</em>">Избранные <em>работы</em></h2>
+          </div>
+          <div class="head-side" data-reveal data-ru="Шесть штучных моделей сезона. Каждая — собрана и отшлифована вручную. Ткани, фурнитура и порода дерева подбираются под заказчика." data-en="Six signature pieces of the season. Each is assembled and sanded by hand. Fabric, hardware and wood species are chosen per client.">
+            Шесть штучных моделей сезона. Каждая — собрана и отшлифована вручную. Ткани, фурнитура и порода дерева подбираются под заказчика.
+          </div>
+        </div>
+
+        <!-- Slots filled by homepage.js based on the current site mode.
+             Markup stays static so layout doesn't shift on JS hydration;
+             the script swaps `href` + inner content per slot. -->
+        <div class="collection-grid" id="featuredGrid">
+          <a class="product product--lg"     href="catalog.html" data-featured-slot data-reveal></a>
+          <a class="product product--md"     href="catalog.html" data-featured-slot data-reveal style="--reveal-delay: 0.1s"></a>
+          <a class="product product--md"     href="catalog.html" data-featured-slot data-reveal style="--reveal-delay: 0.2s"></a>
+          <a class="product product--wide"   href="catalog.html" data-featured-slot data-reveal></a>
+          <a class="product product--narrow" href="catalog.html" data-featured-slot data-reveal style="--reveal-delay: 0.15s"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATEGORIES — horizontal rail
+         ============================================================ -->
+    <section class="categories" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="Категории" data-en="Categories">Категории</p>
+            <h2 class="serif" style="margin-top: 1.2rem;" data-ru="Для каждого <em>уголка двора</em>" data-en="For every <em>corner of your garden</em>">Для каждого <em>уголка двора</em></h2>
+          </div>
+          <div class="head-side" data-reveal data-ru="От лёгкого стула до полноценной беседки на 12 человек — мы делаем мебель под конкретное место, климат и сценарий отдыха." data-en="From a single chair to a 12-person pavilion — we build for a specific place, climate and ritual.">
+            От лёгкого стула до полноценной беседки на 12 человек — мы делаем мебель под конкретное место, климат и сценарий отдыха.
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards filled by homepage.js: TARKI_AFFINITY.categoriesByMode(mode)
+           orders subcategories by mode-relevance so the rail's first
+           visible cards always match what the user just signalled. -->
+      <div class="cat-rail" data-drag-rail id="catRail"></div>
+    </section>
+
+    <!-- ============================================================
+         MATERIALS
+         ============================================================ -->
+    <section class="materials" id="materials">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="Материалы" data-en="Materials">Материалы</p>
+            <h2 class="serif" style="margin-top: 1.2rem;" data-ru="Только <em>живые</em> поверхности" data-en="Only <em>living</em> surfaces">Только <em>живые</em> поверхности</h2>
+          </div>
+          <div class="head-side" data-reveal data-ru="Никакого МДФ, ЛДСП и пластиковой ротанговой подделки. Только массив, натуральный лён, шерсть, латунь и керамика дагестанских мастеров." data-en="No MDF, particleboard or plastic rattan. Only solid wood, natural linen, wool, brass and ceramics from Dagestani artisans.">
+            Никакого МДФ, ЛДСП и пластиковой ротанговой подделки. Только массив, натуральный лён, шерсть, латунь и керамика дагестанских мастеров.
+          </div>
+        </div>
+
+        <div class="mat-grid">
+          <div class="mat" data-reveal>
+            <div class="mat-img"><img src="https://picsum.photos/seed/tarki-oak/800/1000" alt="" loading="lazy"/></div>
+            <span class="num">01</span>
+            <h4 class="serif" data-ru="Дуб" data-en="Oak">Дуб</h4>
+            <p data-ru="Массив возрастом 60–80 лет. Сушка 90 дней. Финиш — масло-воск." data-en="60–80 year old solid wood. 90-day air-drying. Oil-wax finish.">Массив возрастом 60–80 лет. Сушка 90 дней. Финиш — масло-воск.</p>
+          </div>
+          <div class="mat" data-reveal style="--reveal-delay: 0.1s">
+            <div class="mat-img"><img src="https://picsum.photos/seed/tarki-linen/800/1000" alt="" loading="lazy"/></div>
+            <span class="num">02</span>
+            <h4 class="serif" data-ru="Лён" data-en="Linen">Лён</h4>
+            <p data-ru="Плотный двойной лён ручной выделки из Чечни и Ставрополья. Не выцветает на солнце." data-en="Heavy double-woven linen from Chechnya and Stavropol. Sun-stable.">Плотный двойной лён ручной выделки из Чечни и Ставрополья. Не выцветает на солнце.</p>
+          </div>
+          <div class="mat" data-reveal style="--reveal-delay: 0.2s">
+            <div class="mat-img"><img src="https://picsum.photos/seed/tarki-brass/800/1000" alt="" loading="lazy"/></div>
+            <span class="num">03</span>
+            <h4 class="serif" data-ru="Латунь" data-en="Brass">Латунь</h4>
+            <p data-ru="Кубачинская ковка. Фурнитура и кромки, которые благороднее с возрастом." data-en="Kubachi-forged. Hardware and edges that grow nobler with age.">Кубачинская ковка. Фурнитура и кромки, которые благороднее с возрастом.</p>
+          </div>
+          <div class="mat" data-reveal style="--reveal-delay: 0.3s">
+            <div class="mat-img"><img src="https://picsum.photos/seed/tarki-ceramic/800/1000" alt="" loading="lazy"/></div>
+            <span class="num">04</span>
+            <h4 class="serif" data-ru="Керамика" data-en="Ceramics">Керамика</h4>
+            <p data-ru="Балхарская глина для столешниц и плошек. Обжиг при 1200°C, ручная роспись." data-en="Balkhar clay for tabletops and bowls. Fired at 1200°C, hand-painted.">Балхарская глина для столешниц и плошек. Обжиг при 1200°C, ручная роспись.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROCESS — sticky
+         ============================================================ -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="Как мы работаем" data-en="How we work">Как мы работаем</p>
+            <h2 class="serif" style="margin-top: 1.2rem;" data-ru="От замера до <em>чая на террасе</em>" data-en="From measurement to <em>tea on the terrace</em>">От замера до <em>чая на террасе</em></h2>
+          </div>
+          <div class="head-side" data-reveal data-ru="Полный цикл — от первого замера до сборки на вашем участке. Обычно занимает 6–10 недель." data-en="Full cycle — from first measurement to on-site assembly. Usually 6–10 weeks.">
+            Полный цикл — от первого замера до сборки на вашем участке. Обычно занимает 6–10 недель.
+          </div>
+        </div>
+
+        <div class="process-wrap">
+          <div class="process-sticky">
+            <div class="process-sticky-imgs" id="processImgs">
+              <img class="active" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1200&q=80" alt="" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=80" alt="" loading="lazy"/>
+            </div>
+          </div>
+
+          <div class="process-steps">
+            <div class="step" data-step="0" data-reveal>
+              <span class="step-num">01</span>
+              <div>
+                <h3 class="serif" data-ru="Замер и эскиз" data-en="Measure & sketch">Замер и эскиз</h3>
+                <p data-ru="Дизайнер выезжает к вам с папкой образцов дерева и тканей. Делаем фото места, замеряем, рисуем три эскиза." data-en="Our designer comes to you with a portfolio of wood and fabric samples. We photograph the location, measure and sketch three options.">
+                  Дизайнер выезжает к вам с папкой образцов дерева и тканей. Делаем фото места, замеряем, рисуем три эскиза.
+                </p>
+              </div>
+            </div>
+            <div class="step" data-step="1" data-reveal>
+              <span class="step-num">02</span>
+              <div>
+                <h3 class="serif" data-ru="Подбор материалов" data-en="Material selection">Подбор материалов</h3>
+                <p data-ru="Вместе выбираем породу дерева, тип финиша и обивку. Утверждаем визуализацию и смету." data-en="Together we choose the wood species, finish type and upholstery. Approve renderings and quote.">
+                  Вместе выбираем породу дерева, тип финиша и обивку. Утверждаем визуализацию и смету.
+                </p>
+              </div>
+            </div>
+            <div class="step" data-step="2" data-reveal>
+              <span class="step-num">03</span>
+              <div>
+                <h3 class="serif" data-ru="Изготовление" data-en="Crafting">Изготовление</h3>
+                <p data-ru="4–8 недель в нашей мастерской в Махачкале. Каждые две недели присылаем фото со стадии работы." data-en="4–8 weeks in our Makhachkala workshop. Every two weeks we send photos from the bench.">
+                  4–8 недель в нашей мастерской в Махачкале. Каждые две недели присылаем фото со стадии работы.
+                </p>
+              </div>
+            </div>
+            <div class="step" data-step="3" data-reveal>
+              <span class="step-num">04</span>
+              <div>
+                <h3 class="serif" data-ru="Доставка и сборка" data-en="Delivery & assembly">Доставка и сборка</h3>
+                <p data-ru="Доставка по Дагестану — бесплатно. По России — собственным транспортом или ТК. Сборку выполняет наша бригада." data-en="Free delivery across Dagestan. Across Russia — own transport or carrier. Our crew assembles on site.">
+                  Доставка по Дагестану — бесплатно. По России — собственным транспортом или ТК. Сборку выполняет наша бригада.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATS
+         ============================================================ -->
+    <section class="stats">
+      <div class="container">
+        <div class="section-head" style="margin-bottom: 2rem;">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="Цифры" data-en="Numbers">Цифры</p>
+          </div>
+          <div class="head-side" data-reveal data-ru="Семь лет, четыре поколения столяров и один принцип — делать так, чтобы внуки заказчиков сидели на той же мебели." data-en="Seven years, four generations of joiners, one principle — build it so the client's grandchildren sit on the same furniture.">
+            Семь лет, четыре поколения столяров и один принцип — делать так, чтобы внуки заказчиков сидели на той же мебели.
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat" data-reveal>
+            <div class="num serif"><span data-counter="380">0</span>+</div>
+            <div class="lbl" data-ru="Выполненных проектов" data-en="Completed projects">Выполненных проектов</div>
+          </div>
+          <div class="stat" data-reveal style="--reveal-delay: 0.1s">
+            <div class="num serif"><span data-counter="7">0</span><em>лет</em></div>
+            <div class="lbl" data-ru="Средний возраст столяра" data-en="Avg. joiner experience">Опыт каждого мастера</div>
+          </div>
+          <div class="stat" data-reveal style="--reveal-delay: 0.2s">
+            <div class="num serif"><span data-counter="90">0</span></div>
+            <div class="lbl" data-ru="Дней естественной сушки" data-en="Days of natural drying">Дней естественной сушки</div>
+          </div>
+          <div class="stat" data-reveal style="--reveal-delay: 0.3s">
+            <div class="num serif"><span data-counter="100">0</span>%</div>
+            <div class="lbl" data-ru="Ручная работа" data-en="Handcrafted">Ручная работа, никакого CNC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS
+         ============================================================ -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="Отзывы" data-en="Reviews">Отзывы</p>
+            <h2 class="serif" style="margin-top: 1.2rem;" data-ru="Слово <em>заказчикам</em>" data-en="From our <em>clients</em>">Слово <em>заказчикам</em></h2>
+          </div>
+          <div class="head-side" data-reveal data-ru="Те, кто уже встречает рассветы на наших террасах — от Сочи до Махачкалы." data-en="Those who already greet dawn on our terraces — from Sochi to Makhachkala.">
+            Те, кто уже встречает рассветы на наших террасах — от Сочи до Махачкалы.
+          </div>
+        </div>
+
+        <div class="testimonial-track" id="testimonials">
+          <div class="t-card active">
+            <blockquote class="serif" data-ru="Я заказывала террасный комплект для дома в Каспийске. Через два года — стол выглядит, как новый. Даже лучше." data-en="I ordered a terrace set for our Kaspiysk house. Two years on, the table looks new. Better than new.">
+              Я заказывала террасный комплект для дома в Каспийске. Через два года — стол выглядит, как новый. Даже лучше.
+            </blockquote>
+            <div class="author">
+              <div class="avatar"><img src="https://picsum.photos/seed/tarki-zarema/200/200" alt="" loading="lazy"/></div>
+              <div>
+                <strong data-ru="Зарема Магомедова" data-en="Zarema Magomedova">Зарема Магомедова</strong>
+                <small data-ru="Архитектор, Махачкала" data-en="Architect, Makhachkala">Архитектор, Махачкала</small>
+              </div>
+            </div>
+          </div>
+          <div class="t-card">
+            <blockquote class="serif" data-ru="Уровень внимания к деталям — на уровне европейских ателье, а цена в три раза честнее." data-en="Attention to detail rivals European ateliers — at a third of the price.">
+              Уровень внимания к деталям — на уровне европейских ателье, а цена в три раза честнее.
+            </blockquote>
+            <div class="author">
+              <div class="avatar"><img src="https://picsum.photos/seed/tarki-mikhail/200/200" alt="" loading="lazy"/></div>
+              <div>
+                <strong data-ru="Михаил Захаров" data-en="Mikhail Zakharov">Михаил Захаров</strong>
+                <small data-ru="Девелопер, Сочи" data-en="Developer, Sochi">Девелопер, Сочи</small>
+              </div>
+            </div>
+          </div>
+          <div class="t-card">
+            <blockquote class="serif" data-ru="Беседка стоит уже три зимы. Никаких трещин, скрипов, перекосов. Дерево живёт — а не разваливается." data-en="Our pavilion has stood three winters. No cracks, creaks, or warping. The wood is alive — not falling apart.">
+              Беседка стоит уже три зимы. Никаких трещин, скрипов, перекосов. Дерево живёт — а не разваливается.
+            </blockquote>
+            <div class="author">
+              <div class="avatar"><img src="https://picsum.photos/seed/tarki-timur/200/200" alt="" loading="lazy"/></div>
+              <div>
+                <strong data-ru="Тимур Алиев" data-en="Timur Aliev">Тимур Алиев</strong>
+                <small data-ru="Ресторатор, Дербент" data-en="Restaurateur, Derbent">Ресторатор, Дербент</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-controls" id="tControls">
+          <button class="t-dot active" aria-label="1"></button>
+          <button class="t-dot" aria-label="2"></button>
+          <button class="t-dot" aria-label="3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SHOWROOMS
+         ============================================================ -->
+    <section class="showrooms" id="showrooms">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="eyebrow" data-ru="Шоурумы" data-en="Showrooms">Шоурумы</p>
+            <h2 class="serif" style="margin-top: 1.2rem;" data-ru="Где <em>посидеть</em>" data-en="Where to <em>take a seat</em>">Где <em>посидеть</em></h2>
+          </div>
+          <div class="head-side" data-reveal data-ru="Три точки в Дагестане. Приходите без записи — с понедельника по субботу, с 10 до 20." data-en="Three points in Dagestan. Walk in without an appointment — Mon–Sat, 10am–8pm.">
+            Три точки в Дагестане. Приходите без записи — с понедельника по субботу, с 10 до 20.
+          </div>
+        </div>
+
+        <div class="show-grid">
+          <a href="#contact" class="show-card" data-reveal>
+            <div class="img"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1000&q=80" alt="" loading="lazy"/></div>
+            <span class="pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+            </span>
+            <div class="body">
+              <small class="city" data-ru="Махачкала · флагман" data-en="Makhachkala · flagship">Махачкала · флагман</small>
+              <h3 class="serif" data-ru="Тарки-Тау" data-en="Tarki-Tau">Тарки-Тау</h3>
+              <div class="addr" data-ru="ул. Ярагского, 75&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 01" data-en="75 Yaragskogo St.&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 01">
+                ул. Ярагского, 75&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 01
+              </div>
+            </div>
+          </a>
+
+          <a href="#contact" class="show-card" data-reveal style="--reveal-delay: 0.1s">
+            <div class="img"><img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1000&q=80" alt="" loading="lazy"/></div>
+            <span class="pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+            </span>
+            <div class="body">
+              <small class="city" data-ru="Дербент · историческое сердце" data-en="Derbent · historic heart">Дербент · историческое сердце</small>
+              <h3 class="serif" data-ru="Нарын-Кала" data-en="Naryn-Kala">Нарын-Кала</h3>
+              <div class="addr" data-ru="ул. Гейдара Алиева, 18&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 02" data-en="18 Heydar Aliyev St.&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 02">
+                ул. Гейдара Алиева, 18&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 02
+              </div>
+            </div>
+          </a>
+
+          <a href="#contact" class="show-card" data-reveal style="--reveal-delay: 0.2s">
+            <div class="img"><img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=1000&q=80" alt="" loading="lazy"/></div>
+            <span class="pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+            </span>
+            <div class="body">
+              <small class="city" data-ru="Каспийск · витрина у моря" data-en="Kaspiysk · seaside">Каспийск · витрина у моря</small>
+              <h3 class="serif" data-ru="Каспий" data-en="Kaspii">Каспий</h3>
+              <div class="addr" data-ru="ул. Ленина, 51&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 03" data-en="51 Lenina St.&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 03">
+                ул. Ленина, 51&nbsp;&nbsp;·&nbsp;&nbsp;+7 928 000 00 03
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA / CONTACT
+         ============================================================ -->
+    <section class="cta" id="contact">
+      <div class="cta-blob" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-grid">
+          <div>
+            <p class="eyebrow" style="color: rgba(244,239,230,0.55);" data-ru="Заявка" data-en="Get in touch">Заявка</p>
+            <h2 class="serif" style="margin-top: 1.2rem;" data-ru="Расскажите про <em>ваш двор</em>" data-en="Tell us about <em>your garden</em>">Расскажите про <em>ваш двор</em></h2>
+            <p class="cta-lead" data-ru="Заполните короткую анкету или напишите в WhatsApp. Перезвоним в течение часа в рабочие дни и предложим бесплатный замер." data-en="Fill out a short form or message us on WhatsApp. We'll call back within an hour on weekdays and arrange a free measurement.">
+              Заполните короткую анкету или напишите в WhatsApp. Перезвоним в течение часа в рабочие дни и предложим бесплатный замер.
+            </p>
+
+            <div class="cta-contact">
+              <a href="https://wa.me/79280000000" target="_blank" rel="noopener">
+                <div class="row">
+                  <small data-ru="WhatsApp · быстрее всего" data-en="WhatsApp · fastest">WhatsApp · быстрее всего</small>
+                  <span>+7 928 000 00 00</span>
+                </div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="mailto:hello@tarki.ru">
+                <div class="row">
+                  <small data-ru="Почта" data-en="Email">Почта</small>
+                  <span>hello@tarki.ru</span>
+                </div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://instagram.com/tarki" target="_blank" rel="noopener">
+                <div class="row">
+                  <small data-ru="Соцсети" data-en="Social">Соцсети</small>
+                  <span>@tarki</span>
+                </div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="cta-form" id="ctaForm" novalidate>
+            <div>
+              <label for="f-name" data-ru="Как к вам обращаться" data-en="Your name">Как к вам обращаться</label>
+              <input type="text" id="f-name" name="name" required autocomplete="name" />
+            </div>
+            <div>
+              <label for="f-phone" data-ru="Телефон или WhatsApp" data-en="Phone or WhatsApp">Телефон или WhatsApp</label>
+              <input type="tel" id="f-phone" name="phone" required placeholder="+7 ___ ___ __ __" autocomplete="tel" />
+            </div>
+            <div>
+              <label for="f-cat" data-ru="Что вас интересует" data-en="Interested in">Что вас интересует</label>
+              <select id="f-cat" name="category">
+                <option data-ru="Терраса под ключ" data-en="Full terrace">Терраса под ключ</option>
+                <option data-ru="Обеденная группа" data-en="Dining set">Обеденная группа</option>
+                <option data-ru="Лежаки и кресла" data-en="Loungers & chairs">Лежаки и кресла</option>
+                <option data-ru="Беседка" data-en="Pavilion">Беседка</option>
+                <option data-ru="Что-то другое" data-en="Something else">Что-то другое</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-msg" data-ru="Комментарий — место, размеры, идеи" data-en="Comment — location, sizing, ideas">Комментарий — место, размеры, идеи</label>
+              <textarea id="f-msg" name="message"></textarea>
+            </div>
+            <button type="submit" class="submit" data-magnetic>
+              <span data-ru="Отправить заявку" data-en="Send request">Отправить заявку</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div style="max-width: 1480px; margin: 0 auto;">
+      <div class="foot-top">
+        <div>
+          <a href="#" class="brand"><span class="dot"></span><span>TARKI</span></a>
+          <p data-ru="Мастерская дачной мебели в Махачкале. Принимаем заказы из России, Азербайджана и стран Залива." data-en="Garden furniture workshop in Makhachkala. We accept orders from Russia, Azerbaijan and the Gulf states.">
+            Мастерская дачной мебели в Махачкале. Принимаем заказы из России, Азербайджана и стран Залива.
+          </p>
+        </div>
+        <div class="foot-col">
+          <h5 data-ru="Каталог" data-en="Catalog">Каталог</h5>
+          <ul>
+            <li><a href="#categories" data-ru="Террасы" data-en="Terraces">Террасы</a></li>
+            <li><a href="#categories" data-ru="Лежаки" data-en="Loungers">Лежаки</a></li>
+            <li><a href="#categories" data-ru="Обеденные группы" data-en="Dining sets">Обеденные группы</a></li>
+            <li><a href="#categories" data-ru="Беседки" data-en="Pavilions">Беседки</a></li>
+            <li><a href="#categories" data-ru="Текстиль" data-en="Textiles">Текстиль</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5 data-ru="Компания" data-en="Studio">Компания</h5>
+          <ul>
+            <li><a href="#manifesto" data-ru="О бренде" data-en="About">О бренде</a></li>
+            <li><a href="#materials" data-ru="Материалы" data-en="Materials">Материалы</a></li>
+            <li><a href="#process" data-ru="Процесс" data-en="Process">Процесс</a></li>
+            <li><a href="#showrooms" data-ru="Шоурумы" data-en="Showrooms">Шоурумы</a></li>
+            <li><a href="#" data-ru="Журнал" data-en="Journal">Журнал</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5 data-ru="Контакты" data-en="Contact">Контакты</h5>
+          <ul>
+            <li><a href="tel:+79280000000">+7 928 000 00 00</a></li>
+            <li><a href="mailto:hello@tarki.ru">hello@tarki.ru</a></li>
+            <li><a href="https://wa.me/79280000000">WhatsApp</a></li>
+            <li><a href="https://instagram.com/tarki">Instagram</a></li>
+            <li><a href="https://t.me/tarki">Telegram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="giant-wordmark" data-reveal>
+        <span>T</span><span>A</span><span>R</span><span>K</span><span>I</span>
+      </div>
+
+      <div class="foot-bottom">
+        <span>© 2026 TARKI. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></span>
+        <span data-ru="Дагестан · Россия" data-en="Dagestan · Russia">Дагестан · Россия</span>
+        <a href="#" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="affinity.js"></script>
+  <script src="script.js"></script>
+  <script src="homepage.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>

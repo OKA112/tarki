@@ -1,0 +1,247 @@
+/* ==========================================================================
+   TARKI — Welcome screen (first-visit segmentation)
+   ========================================================================== */
+
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--paper);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s var(--ease-out);
+}
+.welcome.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* lock body scroll while welcome is open */
+body.welcome-open { overflow: hidden; }
+
+/* ----- header ----- */
+.welcome-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.welcome-head .brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+.welcome-head .brand .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--ochre);
+  display: inline-block;
+  margin-bottom: 0.18em;
+}
+.welcome-skip {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+.welcome-skip:hover { color: var(--ink); border-color: var(--line); }
+
+/* ----- body ----- */
+.welcome-body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: center;
+  max-width: 1480px;
+  width: 100%;
+  margin: 0 auto;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+.welcome-intro {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.welcome-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 500;
+}
+.welcome-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 2.2rem;
+  height: 1px;
+  background: currentColor;
+  vertical-align: middle;
+  margin-right: 0.8rem;
+  transform: translateY(-2px);
+}
+.welcome-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 2.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: var(--display-line);
+  letter-spacing: var(--display-letterspace);
+}
+.welcome-title em { color: var(--ochre); }
+.welcome-lead {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* ----- cards ----- */
+.welcome-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  align-items: stretch;
+  min-height: clamp(300px, 50vh, 500px);
+}
+@media (max-width: 760px) {
+  .welcome-cards { grid-template-columns: 1fr; min-height: 0; }
+}
+
+.welcome-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--linen);
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  font: inherit;
+  color: var(--paper);
+  min-height: 280px;
+  padding: 2rem;
+  transition: transform 0.6s var(--ease-out);
+}
+.welcome-card:hover { transform: translateY(-4px); }
+.welcome-card-img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+.welcome-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 1.6s var(--ease-out);
+}
+.welcome-card:hover .welcome-card-img img { transform: scale(1.10); }
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(20,17,15,0.78), rgba(20,17,15,0.15) 65%, rgba(20,17,15,0.05));
+  transition: background 0.5s var(--ease-out);
+}
+.welcome-card:hover::before {
+  background: linear-gradient(to top, rgba(20,17,15,0.82), rgba(20,17,15,0.30) 65%, rgba(20,17,15,0.18));
+}
+.welcome-card-icon {
+  position: absolute;
+  top: 1.4rem; left: 1.4rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(244,239,230,0.18);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+.welcome-card-icon svg { width: 20px; height: 20px; color: var(--paper); }
+
+.welcome-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.welcome-card-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+.welcome-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 1.2rem + 1.5vw, 2.4rem);
+  line-height: var(--display-line);
+  letter-spacing: var(--display-letterspace);
+  font-weight: 400;
+}
+.welcome-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.88;
+  max-width: 36ch;
+}
+.welcome-card-arrow {
+  position: absolute;
+  top: 1.4rem; right: 1.4rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  transform: translateY(-4px) rotate(-30deg);
+  opacity: 0;
+  transition: transform 0.5s var(--ease-out), opacity 0.4s ease;
+  z-index: 1;
+}
+.welcome-card:hover .welcome-card-arrow {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+.welcome-card-arrow svg { width: 16px; height: 16px; }
+
+/* ----- footer ----- */
+.welcome-foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+}
+.welcome-foot .toggle-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.welcome-foot svg { width: 14px; height: 14px; }
+
+@media (max-width: 540px) {
+  .welcome-head .brand { font-size: 1.2rem; }
+  .welcome-card { padding: 1.4rem; min-height: 240px; }
+  .welcome-card-icon { width: 36px; height: 36px; top: 1rem; left: 1rem; }
+  .welcome-card-arrow { width: 36px; height: 36px; top: 1rem; right: 1rem; }
+}

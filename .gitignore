@@ -1,0 +1,77 @@
+# ============================================================
+# macOS
+# ============================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ============================================================
+# Editors / IDEs
+# ============================================================
+# VSCode — keep .vscode folder out by default; uncomment specific
+# files below if you want to share them with the team
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================
+# Node / package managers (if you add a build step later)
+# ============================================================
+node_modules/
+package-lock.json.bak
+yarn.lock.bak
+.pnpm-store/
+.npm/
+
+# ============================================================
+# Dev server / build artefacts
+# ============================================================
+.vite/
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================================
+# Environment variables
+# ============================================================
+.env
+.env.local
+.env.*.local
+
+# ============================================================
+# Project-specific
+# ============================================================
+# Local Claude Code config — runtime state, not source code
+.claude/
+
+# Misc
+*.tmp
+*.temp
+.history/
+
+# ============================================================
+# Optional: drafts / scratch files
+# ============================================================
+drafts/
+scratch/
+TODO.local.md
