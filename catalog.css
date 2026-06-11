@@ -238,6 +238,7 @@
 }
 @media (max-width: 900px) {
   .cat-grid-wrap { grid-template-columns: 1fr; gap: 0; }
+  .icon-btn { width: 36px; height: 36px; }
 }
 
 .result-count {
