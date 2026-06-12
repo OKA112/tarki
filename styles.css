@@ -229,7 +229,7 @@ em { font-style: italic; font-family: var(--font-accent); font-weight: 400; }
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
-  z-index: 100;
+  z-index: 9999;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease, width 0.35s var(--ease-out), height 0.35s var(--ease-out),

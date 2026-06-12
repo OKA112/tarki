@@ -140,6 +140,15 @@ body.welcome-open { overflow: hidden; }
   transition: transform 0.6s var(--ease-out);
 }
 .welcome-card:hover { transform: translateY(-4px); }
+
+/* Desktop: hide native cursor so the site's custom cursor shows through
+   (the welcome overlay sits above the cursor's old z-index — see styles.css). */
+@media (hover: hover) and (pointer: fine) {
+  .welcome,
+  .welcome-card,
+  .welcome-skip,
+  .welcome .brand { cursor: none; }
+}
 .welcome-card-img {
   position: absolute;
   inset: 0;
