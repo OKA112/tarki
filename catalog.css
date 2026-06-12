@@ -286,6 +286,14 @@
   font-weight: 500;
   margin-bottom: 0.4rem;
 }
+/* "в разработке" note next to the Material filter title */
+.filter-title em {
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ochre);
+  margin-left: 0.5rem;
+}
 .filter-list { display: flex; flex-direction: column; gap: 0.55rem; }
 .filter-list label {
   display: flex;

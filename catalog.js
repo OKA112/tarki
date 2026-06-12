@@ -123,11 +123,10 @@
     cat.innerHTML = html;
     // Apply indeterminate state after render (DOM property, not attribute)
     $$('input[data-indeterminate="1"]', cat).forEach(inp => { inp.indeterminate = true; });
+    // Material filter temporarily disabled — options hidden, the title
+    // shows a "в разработке" note instead (see catalog.html).
     const mat = $('#filterMaterial');
-    mat.innerHTML = MATS.map(m => {
-      const cnt = PRODUCTS.filter(p => p.materials.includes(m.id)).length;
-      return `<li><label><input type="checkbox" data-mat="${m.id}" ${state.materials.has(m.id) ? 'checked' : ''}/><span class="lbl" data-ru="${m.ru}" data-en="${m.en}">${m.ru}</span><span class="count">${cnt}</span></label></li>`;
-    }).join('');
+    mat.innerHTML = '';
 
     // capacity / scenario inputs are already in HTML — just sync state
     $$('#filterCapacity input[data-cap]').forEach(inp => {
