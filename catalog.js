@@ -330,7 +330,6 @@
     });
     state.scenarios.forEach(scn => {
       const labels = {
-        intimate:  lang() === 'en' ? 'Intimate'      : 'Для двоих',
         family:    lang() === 'en' ? 'Family'        : 'Для семьи',
         gathering: lang() === 'en' ? 'Large group'   : 'Для компании',
         dining:    lang() === 'en' ? 'Dining'        : 'Для застолий',
